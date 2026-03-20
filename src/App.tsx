@@ -49,7 +49,7 @@ function App() {
       setWeather({
         city: name,
         country: country_code,
-        temp: weatherData.current.temperature_2m,
+        temp: Math.round((weatherData.current.temperature_2m * 9/5) + 32),
         condition: getConditionName(weatherData.current.weathercode),
         icon: getIconCode(weatherData.current.weathercode),
       });
@@ -107,7 +107,7 @@ function App() {
             {weather ? (
               <div className="mt-6 text-center">
                 <h3 className="text-2xl font-bold">{weather.city}, {weather.country}</h3>
-                <p className="text-5xl font-light my-2">{weather.temp}°C</p>
+                <p className="text-5xl font-light my-2">{weather.temp}°F</p>
                 <p className="text-xl capitalize">{weather.condition}</p>
                 <img src={`https://openweathermap.org/img/wn/${weather.icon}@2x.png`} alt={weather.condition} className="mx-auto" />
               </div>
