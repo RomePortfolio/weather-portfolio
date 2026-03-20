@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './index.css';  // Make sure this imports Tailwind (or move to App.css if you prefer)
 
 function App() {
-  const [city, setCity] = useState('Houston');
+  const [city, setCity] = useState<string>('Houston');
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col">
@@ -40,19 +40,36 @@ function App() {
           </div>
         </section>
 
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold mb-4">Live Demo: Weather Checker</h2>
-          <div className="bg-white p-6 rounded shadow">
-            <label className="block mb-2 font-medium">City:</label>
-            <input
-              type="text"
-              value={city}
-              onChange={(e) => setCity(e.target.value)}
-              className="border border-gray-300 p-2 rounded w-full max-w-xs focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <p className="mt-4 text-gray-600">Weather will appear here (coming in Phase 2)</p>
-          </div>
-        </section>
+<section className="mb-12">
+  <h2 className="text-3xl font-bold mb-4">Live Demo: Weather Checker</h2>
+  <div className="bg-white p-6 rounded-lg shadow-lg">
+    <label className="block mb-2 font-medium text-gray-700">City:</label>
+    <input
+      type="text"
+      value={city}
+      onChange={(e) => setCity(e.target.value)}
+      onKeyDown={(e) => { if (e.key === 'Enter') fetchWeather(); }}
+      className="border border-gray-300 p-2 rounded w-full max-w-xs focus:outline-none focus:ring-2 focus:ring-blue-500"
+      placeholder="Type city & press Enter"
+    />
+    
+    {weather ? (
+      <div className="mt-6 text-center">
+        <h3 className="text-2xl font-bold">{weather.city}, {weather.country}</h3>
+        <p className="text-5xl font-light my-2">{weather.temp}°C</p>
+        <p className="text-xl capitalize">{weather.condition}</p>
+        <img 
+          src={`https://openweathermap.org/img/wn/${weather.icon}@2x.png`} 
+          alt={weather.condition} 
+          className="mx-auto"
+        />
+      </div>
+    ) : (
+      <p className="mt-4 text-gray-600 text-center">Enter a city & press Enter to see weather!</p>
+    )}
+  </div>
+</section>
+
 
         <section>
           <h2 className="text-3xl font-bold mb-4">Contact</h2>
