@@ -59,7 +59,7 @@ function App() {
     }
   };
 
-  // Auto-load Houston when page loads
+  // Auto-load Houston
   useEffect(() => {
     fetchWeather();
   }, []);
@@ -72,7 +72,6 @@ function App() {
         <p className="mt-2">Associate in Cloud Computing | Houston, TX</p>
       </header>
 
-      {/* Main */}
       <main className="flex-grow container mx-auto p-6 max-w-4xl">
         {/* About */}
         <section className="mb-12">
@@ -80,22 +79,12 @@ function App() {
           <p>Recent graduate passionate about serverless, AWS, and building useful apps. Learning Go, Python, TypeScript.</p>
         </section>
 
-        {/* Skills - curved shadowed boxes */}
+        {/* Skills */}
         <section className="mb-12">
           <h2 className="text-3xl font-bold mb-4">Skills</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {[
-              "AWS (EC2, S3, Lambda, DynamoDB, Amplify)",
-              "React + TypeScript",
-              "Python & starting Go",
-              "Git & GitHub",
-              "Serverless Architecture",
-              "Cloud Concepts & IaC",
-            ].map((skill, i) => (
-              <div
-                key={i}
-                className="bg-white rounded-3xl p-6 shadow-lg hover:shadow-xl transition-shadow border border-gray-200 text-center font-medium"
-              >
+            {["AWS (EC2, S3, Lambda, DynamoDB, Amplify)", "React + TypeScript", "Python & starting Go", "Git & GitHub", "Serverless Architecture", "Cloud Concepts & IaC"].map((skill, i) => (
+              <div key={i} className="bg-white rounded-3xl p-6 shadow-lg hover:shadow-xl transition-shadow border border-gray-200 text-center font-medium">
                 {skill}
               </div>
             ))}
@@ -115,17 +104,12 @@ function App() {
               className="border border-gray-300 p-2 rounded w-full max-w-xs focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Type city & press Enter"
             />
-
             {weather ? (
               <div className="mt-6 text-center">
                 <h3 className="text-2xl font-bold">{weather.city}, {weather.country}</h3>
                 <p className="text-5xl font-light my-2">{weather.temp}°C</p>
                 <p className="text-xl capitalize">{weather.condition}</p>
-                <img
-                  src={`https://openweathermap.org/img/wn/${weather.icon}@2x.png`}
-                  alt={weather.condition}
-                  className="mx-auto"
-                />
+                <img src={`https://openweathermap.org/img/wn/${weather.icon}@2x.png`} alt={weather.condition} className="mx-auto" />
               </div>
             ) : (
               <p className="mt-4 text-gray-600 text-center">Loading Houston weather...</p>
@@ -139,4 +123,16 @@ function App() {
           <div className="flex flex-col sm:flex-row gap-4">
             <a href="mailto:romanaegis@gmail.com" className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors shadow-md inline-block">Email Me</a>
             <a href="https://github.com/romanaegis" target="_blank" rel="noopener noreferrer" className="bg-gray-800 text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition-colors shadow-md inline-block">GitHub</a>
-            <a href="https://x.com/rom
+            <a href="https://x.com/romanaegis" target="_blank" rel="noopener noreferrer" className="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition-colors shadow-md inline-block">X (Twitter)</a>
+          </div>
+        </section>
+      </main>
+
+      <footer className="bg-gray-800 text-white p-4 text-center">
+        © {new Date().getFullYear()} Rome Aegis
+      </footer>
+    </div>
+  );
+}
+
+export default App;
