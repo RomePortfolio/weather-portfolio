@@ -1,121 +1,60 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import { useState } from 'react';
+import './App.css';  // or import './index.css' if using Tailwind there
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [city, setCity] = useState('Houston');
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <div className="min-h-screen bg-gray-100 flex flex-col">
+      {/* Header */}
+      <header className="bg-blue-600 text-white p-6 text-center">
+        <h1 className="text-4xl font-bold">Rome - Cloud & Developer Portfolio</h1>
+        <p className="mt-2">Associate in Cloud Computing | Houston, TX</p>
+      </header>
 
-      <div className="ticks"></div>
+      {/* Main sections */}
+      <main className="flex-grow container mx-auto p-6 max-w-4xl">
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold mb-4">About Me</h2>
+          <p>Recent graduate passionate about serverless, AWS, and building useful apps. Learning Go, Python, TypeScript. Looking for entry-level cloud/dev roles!</p>
+        </section>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold mb-4">Skills</h2>
+          <ul className="list-disc pl-6">
+            <li>AWS (EC2, S3, Lambda, DynamoDB, Amplify)</li>
+            <li>React + TypeScript</li>
+            <li>Python & starting Go</li>
+            <li>Git & GitHub</li>
+            <li>Serverless Architecture</li>
           </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+        </section>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold mb-4">Live Demo: Weather Checker</h2>
+          <div className="bg-white p-6 rounded shadow">
+            <label className="block mb-2">City:</label>
+            <input
+              type="text"
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
+              className="border p-2 rounded w-full max-w-xs"
+            />
+            <p className="mt-4 text-gray-600">Weather will appear here (coming in Phase 2)</p>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-3xl font-bold mb-4">Contact</h2>
+          <p>Email: [your email] | GitHub: github.com/RomePortfolio | X: @romanaegis</p>
+        </section>
+      </main>
+
+      <footer className="bg-gray-800 text-white p-4 text-center">
+        © {new Date().getFullYear()} Rome Aegis
+      </footer>
+    </div>
+  );
 }
 
-export default App
+export default App;
