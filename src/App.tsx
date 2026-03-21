@@ -65,9 +65,7 @@ function App() {
   }, []);
 <header 
   className="bg-blue-600 text-white p-8 text-center bg-cover bg-center relative min-h-[400px] flex items-center justify-center"
-  style={{ 
-    backgroundImage: `url('/images/skyline.png')`
-    }}>
+ >
   <div className="absolute inset-0 bg-black opacity-60"></div> {/* stronger overlay for text */}
   <div className="relative z-10 max-w-4xl">
     <h1 className="text-5xl font-bold mb-2">Rome Colmenares</h1>
