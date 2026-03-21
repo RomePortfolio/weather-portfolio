@@ -74,16 +74,45 @@ function App() {
 
       <main className="flex-grow container mx-auto p-6 max-w-4xl">
         {/* About */}
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold mb-4">About Me</h2>
-          <p>Recent graduate passionate about serverless, AWS, and building useful apps. Learning Go, Python, TypeScript.</p>
-        </section>
+       <section className="mb-12">
+  <h2 className="text-3xl font-bold mb-4">About Me</h2>
+  <p className="text-lg leading-relaxed">
+    Recent graduate with an Associate’s degree in Cloud Computing, passionate about serverless architecture, AWS, and building practical, user-focused applications. Currently deepening my skills in React + TypeScript, Python, and Golang.
+  </p>
+  <p className="text-lg leading-relaxed mt-4">
+    I bring <strong>decades of professional experience</strong> in high-stakes environments, including:
+  </p>
+  <ul className="list-disc pl-6 mt-3 space-y-2 text-lg">
+    <li>Training & instruction — designed and delivered complex training programs for diverse teams, translating technical concepts into clear, actionable learning.</li>
+    <li>Communications — excelled in stakeholder management, clear documentation, and cross-functional collaboration across departments and leadership levels.</li>
+    <li>Logistics & operations — managed large-scale coordination, resource allocation, and process optimization under tight deadlines and high pressure.</li>
+    <li>Management & leadership — led teams, mentored professionals, resolved conflicts, and drove performance in dynamic, results-oriented settings.</li>
+    <li>Problem-solving & adaptability — consistently navigated ambiguity, identified root causes, and implemented effective solutions in fast-changing environments.</li>
+  </ul>
+  <p className="text-lg leading-relaxed mt-4">
+    Now channeling that real-world expertise into cloud technologies — eager to bring proven leadership, communication, and operational skills to an entry-level cloud, DevOps, or developer role.
+  </p>
+  <p className="text-lg leading-relaxed mt-4 italic">
+  Outside of tech, I enjoy SciFi, animal training, and playing table top roleplaying games — always looking for ways to blend curiosity with practical problem-solving.
+  </p>
+</section>
 
         {/* Skills */}
         <section className="mb-12">
           <h2 className="text-3xl font-bold mb-4">Skills</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {["AWS (EC2, S3, Lambda, DynamoDB, Amplify)", "React + TypeScript", "Python & starting Go", "Git & GitHub", "Serverless Architecture", "Cloud Concepts & IaC"].map((skill, i) => (
+            {["Amazon Web Services (AWS, Lambda, S3, DynamoDB, Amplify)",
+      "Cloud Computing Fundamentals",
+      "Serverless Architecture",
+      "React + TypeScript",
+      "Python Programming",
+      "Golang (Learning)",
+      "Git & GitHub",
+      "Docker & Containers (Basics)",
+      "Linux/Unix Basics",
+      "Networking & Security",
+      "Comp TIA Security+",
+      "Instructional Design"].map((skill, i) => (
               <div key={i} className="bg-white rounded-3xl p-6 shadow-lg hover:shadow-xl transition-shadow border border-gray-200 text-center font-medium">
                 {skill}
               </div>
@@ -124,6 +153,7 @@ function App() {
             <a href="mailto:romanaegis@gmail.com" className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors shadow-md inline-block">Email Me</a>
             <a href="https://github.com/romanaegis" target="_blank" rel="noopener noreferrer" className="bg-gray-800 text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition-colors shadow-md inline-block">GitHub</a>
             <a href="https://x.com/romanaegis" target="_blank" rel="noopener noreferrer" className="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition-colors shadow-md inline-block">X (Twitter)</a>
+            <a href="https://www.linkedin.com/in/rome-colmenares/" target="_blank" rel="noopener noreferrer" className="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition-colors shadow-md inline-block">LinkedIn</a>
           </div>
         </section>
       </main>
