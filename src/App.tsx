@@ -66,8 +66,7 @@ function App() {
 <header 
   className="bg-blue-600 text-white p-8 text-center bg-cover bg-center relative min-h-[400px] flex items-center justify-center"
   style={{ 
-    backgroundImage: "url('/images/Skyline.jpeg')", 
-    backgroundColor: '#af2c1e'
+    backgroundImage: "url('/images/Skyline.jpeg')"
     }}
 >
   <div className="absolute inset-0 bg-black opacity-60"></div> {/* stronger overlay for text */}
