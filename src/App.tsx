@@ -66,17 +66,18 @@ function App() {
 <header 
   className="bg-blue-600 text-white p-8 text-center bg-cover bg-center relative min-h-[400px] flex items-center justify-center"
   style={{ 
-    backgroundImage: "url('/images/Skyline.jpeg')"
-    }}
->
+    backgroundImage: `url('/images/skyline.png')`
+    }}>
   <div className="absolute inset-0 bg-black opacity-60"></div> {/* stronger overlay for text */}
   <div className="relative z-10 max-w-4xl">
     <h1 className="text-5xl font-bold mb-2">Rome Colmenares</h1>
     <p className="text-xl">Cloud Computing Professional | Houston, TX</p>
   </div>
 </header>
+
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col">
+
+      <div className="min-h-screen bg-gray-100 flex flex-col">
       {/* Header */}
       <header className="bg-blue-600 text-white p-6 text-center">
         <h1 className="text-4xl font-bold">Rome - Cloud & Developer Portfolio</h1>
