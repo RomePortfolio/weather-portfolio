@@ -63,7 +63,16 @@ function App() {
   useEffect(() => {
     fetchWeather();
   }, []);
-
+<header 
+  className="bg-blue-600 text-white p-8 text-center bg-cover bg-center relative"
+  style={{ backgroundImage: "url('/images/Skyline.jpeg')" }} 
+>
+  <div className="absolute inset-0 bg-black opacity-50"></div> {/* dark overlay so text is readable */}
+  <div className="relative z-10">
+    <h1 className="text-5xl font-bold">Rome Colmenares</h1>
+    <p className="mt-2 text-xl">Cloud Computing Professional | Houston, TX</p>
+  </div>
+</header>
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col">
       {/* Header */}
