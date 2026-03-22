@@ -63,24 +63,21 @@ function App() {
   useEffect(() => {
     fetchWeather();
   }, []);
-<header 
-  className="bg-blue-600 text-white p-8 text-center bg-cover bg-center relative min-h-[400px] flex items-center justify-center"
- >
-  <div className="absolute inset-0 bg-black opacity-60"></div> {/* stronger overlay for text */}
-  <div className="relative z-10 max-w-4xl">
-    <h1 className="text-5xl font-bold mb-2">Rome Colmenares</h1>
-    <p className="text-xl">Cloud Computing Professional | Houston, TX</p>
-  </div>
-</header>
 
   return (
 
       <div className="min-h-screen bg-gray-100 flex flex-col">
       {/* Header */}
-      <header className="bg-blue-600 text-white p-6 text-center">
-        <h1 className="text-4xl font-bold">Rome - Cloud & Developer Portfolio</h1>
-        <p className="mt-2">Associate in Cloud Computing | Houston, TX</p>
-      </header>
+<header 
+  className="relative min-h-[300px] bg-cover bg-center bg-no-repeat flex items-center justify-center text-white overflow-hidden"
+  style={{ backgroundImage: "url('/images/skyline.png')" }}
+>
+  <div className="absolute inset-0 bg-black/60"></div>
+  <div className="relative z-10 text-center px-4">
+    <h1 className="text-5xl font-bold">Rome Colmenares</h1>
+    <p className="mt-2 text-xl">Cloud Computing Professional | Houston, TX</p>
+  </div>
+</header>
 
       <main className="flex-grow container mx-auto p-6 max-w-4xl">
         {/* About */}

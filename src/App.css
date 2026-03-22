@@ -17,6 +17,14 @@
   }
 }
 
+.custom-header {
+  background-image: url('/images/skyline.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 500px;
+}
+
 .hero {
   position: relative;
 
