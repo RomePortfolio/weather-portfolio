@@ -69,7 +69,7 @@ function App() {
       <div className="min-h-screen bg-gray-100 flex flex-col">
       {/* Header */}
 <header 
-  className="relative min-h-[300px] bg-cover bg-center bg-no-repeat flex items-center justify-center text-white overflow-hidden"
+  className="relative min-h-[200px] bg-cover bg-center bg-no-repeat flex items-center justify-center text-white overflow-hidden"
   style={{ backgroundImage: "url('/images/skyline.png')" }}
 >
   <div className="absolute inset-0 bg-black/60"></div>
@@ -81,27 +81,38 @@ function App() {
 
       <main className="flex-grow container mx-auto p-6 max-w-4xl">
         {/* About */}
-       <section className="mb-12">
-  <h2 className="text-3xl font-bold mb-4">About Me</h2>
-  <p className="text-lg leading-relaxed">
-    Recent graduate with an Associate’s degree in Cloud Computing, passionate about serverless architecture, AWS, and building practical, user-focused applications. Currently deepening my skills in React + TypeScript, Python, and Golang.
-  </p>
-  <p className="text-lg leading-relaxed mt-4">
-    I bring <strong>decades of professional experience</strong> in high-stakes environments, including:
-  </p>
-  <ul className="list-disc pl-6 mt-3 space-y-2 text-lg">
-    <li>Training & instruction — designed and delivered complex training programs for diverse teams, translating technical concepts into clear, actionable learning.</li>
-    <li>Communications — excelled in stakeholder management, clear documentation, and cross-functional collaboration across departments and leadership levels.</li>
-    <li>Logistics & operations — managed large-scale coordination, resource allocation, and process optimization under tight deadlines and high pressure.</li>
-    <li>Management & leadership — led teams, mentored professionals, resolved conflicts, and drove performance in dynamic, results-oriented settings.</li>
-    <li>Problem-solving & adaptability — consistently navigated ambiguity, identified root causes, and implemented effective solutions in fast-changing environments.</li>
-  </ul>
-  <p className="text-lg leading-relaxed mt-4">
-    Now channeling that real-world expertise into cloud technologies — eager to bring proven leadership, communication, and operational skills to an entry-level cloud, DevOps, or developer role.
-  </p>
-  <p className="text-lg leading-relaxed mt-4 italic">
-  Outside of tech, I enjoy SciFi, animal training, and playing table top roleplaying games — always looking for ways to blend curiosity with practical problem-solving.
-  </p>
+<section className="mb-12 flex flex-col md:flex-row items-center md:items-start gap-8">
+  {/* Portrait on the left */}
+  <div className="flex-shrink-0">
+    <img
+      src="/images/image.jpg"
+      alt="Rome Colmenares portrait"
+      className="w-48 h-64 md:w-64 md:h-80 rounded-[50%] object-cover shadow-2xl border-4 border-blue-800"
+    />
+  </div>
+
+  {/* Text content on the right */}
+  <div className="text-center md:text-left">
+    <h2 className="text-3xl font-bold mb-4">About Me</h2>
+    <p className="text-lg leading-relaxed">
+      Recent graduate with an Associate’s degree in Cloud Computing, passionate about serverless architecture, AWS, and building practical, user-focused applications. Currently deepening my skills in React + TypeScript, Python, and Golang.
+    </p>
+    <p className="text-lg leading-relaxed mt-4">
+      I bring <strong>decades of professional experience</strong> in high-stakes environments, including:
+    </p>
+    <ul className="list-disc pl-6 mt-3 space-y-2 text-lg">
+      <li><strong>Training & instruction</strong> — designed and delivered complex training programs for diverse teams, translating technical concepts into clear, actionable learning.</li>
+      <li><strong>Communications</strong> — excelled in stakeholder management, clear documentation, and cross-functional collaboration across departments and leadership levels.</li>
+      <li><strong>Logistics & operations</strong> — managed large-scale coordination, resource allocation, and process optimization under tight deadlines and high pressure.</li>
+      <li><strong>Management & leadership</strong> — led teams, mentored professionals, resolved conflicts, and drove performance in dynamic, results-oriented settings.</li>
+    </ul>
+    <p className="text-lg leading-relaxed mt-4">
+      Now channeling that real-world expertise into cloud technologies — eager to bring proven leadership, communication, and operational skills to an entry-level cloud, DevOps, or developer role.
+    </p>
+    <p className="text-lg leading-relaxed mt-4 italic">
+      Outside of tech, I enjoy SciFi, animal training, and playing table top roleplaying games — always looking for ways to blend curiosity with practical problem-solving.
+    </p>
+  </div>
 </section>
 
         {/* Skills */}
@@ -113,14 +124,14 @@ function App() {
       "Serverless Architecture",
       "React + TypeScript",
       "Python Programming",
-      "Golang (Learning)",
+      "Golang",
       "Git & GitHub",
       "Docker & Containers (Basics)",
       "Linux/Unix Basics",
       "Networking & Security",
       "Comp TIA Security+",
       "Instructional Design"].map((skill, i) => (
-              <div key={i} className="bg-white rounded-3xl p-6 shadow-lg hover:shadow-xl transition-shadow border border-gray-200 text-center font-medium">
+              <div key={i} className="bg-white rounded-3xl p-6 shadow-lg hover:shadow-xl transition-shadow border-1 border-blue-800 text-center font-medium">
                 {skill}
               </div>
             ))}
@@ -137,7 +148,7 @@ function App() {
               value={city}
               onChange={(e) => setCity(e.target.value)}
               onKeyDown={(e) => { if (e.key === 'Enter') fetchWeather(); }}
-              className="border border-gray-300 p-2 rounded w-full max-w-xs focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="border border-blue-800 p-2 rounded w-full max-w-xs focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Type city & press Enter"
             />
             {weather ? (
@@ -152,15 +163,17 @@ function App() {
             )}
           </div>
         </section>
-
+<p className="text-lg leading-relaxed mt-4">
+  I am ager to bring my blend of <strong>technical curiosity </strong>and proven <strong>operational skills</strong> to work for you — let's connect!
+</p>
         {/* Contact */}
         <section>
-          <h2 className="text-3xl font-bold mb-4">Contact</h2>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <a href="mailto:romanaegis@gmail.com" className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors shadow-md inline-block">Email Me</a>
-            <a href="https://github.com/romanaegis" target="_blank" rel="noopener noreferrer" className="bg-gray-800 text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition-colors shadow-md inline-block">GitHub</a>
-            <a href="https://x.com/romanaegis" target="_blank" rel="noopener noreferrer" className="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition-colors shadow-md inline-block">X (Twitter)</a>
-            <a href="https://www.linkedin.com/in/rome-colmenares/" target="_blank" rel="noopener noreferrer" className="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition-colors shadow-md inline-block">LinkedIn</a>
+          <h2 className="text-3xl font-bold mb-4 mt-4">Contact</h2>
+          <div className="flex flex-col sm:flex-row gap-4" >
+            <a href="mailto:romanaegis@gmail.com" className="bg-blue-800 text-white px-6 py-3 rounded-lg hover:bg-blue-900 transition-colors shadow-md inline-block">Email Me</a>
+            <a href="https://github.com/romanaegis" target="_blank" rel="noopener noreferrer" className="bg-blue-800 text-white px-6 py-3 rounded-lg hover:bg-blue-900 transition-colors shadow-md inline-block">GitHub</a>
+            <a href="https://x.com/romanaegis" target="_blank" rel="noopener noreferrer" className="bg-blue-800 text-white px-6 py-3 rounded-lg hover:bg-blue-900 transition-colors shadow-md inline-block">X (Twitter)</a>
+            <a href="https://www.linkedin.com/in/rome-colmenares/" target="_blank" rel="noopener noreferrer" className="bg-blue-800 text-white px-6 py-3 rounded-lg hover:bg-blue-900 transition-colors shadow-md inline-block">LinkedIn</a>
           </div>
         </section>
       </main>
