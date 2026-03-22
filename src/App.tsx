@@ -66,7 +66,7 @@ function App() {
 
   return (
 
-      <div className="min-h-screen bg-gray-100 flex flex-col">
+      <div className="min-h-screen bg-animated flex flex-col">
       {/* Header */}
 <header 
   className="relative min-h-[200px] bg-cover bg-center bg-no-repeat flex items-center justify-center text-white overflow-hidden"
@@ -87,12 +87,12 @@ function App() {
     <img
       src="/images/image.jpg"
       alt="Rome Colmenares portrait"
-      className="w-48 h-64 md:w-64 md:h-80 rounded-[50%] object-cover shadow-2xl border-4 border-blue-800"
+      className="w-68 h-84 md:w-84 md:h-100 rounded-[50%] object-cover shadow-2xl border-4 border-black"
     />
   </div>
 
   {/* Text content on the right */}
-  <div className="text-center md:text-left">
+  <div className="text-center md:text-left text-gray-100 drop-shadow-lg">
     <h2 className="text-3xl font-bold mb-4">About Me</h2>
     <p className="text-lg leading-relaxed">
       Recent graduate with an Associate’s degree in Cloud Computing, passionate about serverless architecture, AWS, and building practical, user-focused applications. Currently deepening my skills in React + TypeScript, Python, and Golang.
@@ -117,7 +117,7 @@ function App() {
 
         {/* Skills */}
         <section className="mb-12">
-          <h2 className="text-3xl font-bold mb-4">Skills</h2>
+          <h2 className="text-3xl font-bold mb-4 text-gray-100 drop-shadow-lg">Skills</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {["Amazon Web Services (AWS, Lambda, S3, DynamoDB, Amplify)",
       "Cloud Computing Fundamentals",
@@ -131,7 +131,7 @@ function App() {
       "Networking & Security",
       "Comp TIA Security+",
       "Instructional Design"].map((skill, i) => (
-              <div key={i} className="bg-white rounded-3xl p-6 shadow-lg hover:shadow-xl transition-shadow border-1 border-blue-800 text-center font-medium">
+              <div key={i} className="bg-white rounded-3xl p-6 shadow-lg hover:shadow-xl transition-shadow border-1 border-black text-center font-medium">
                 {skill}
               </div>
             ))}
@@ -140,7 +140,7 @@ function App() {
 
         {/* Weather Demo */}
         <section className="mb-12">
-          <h2 className="text-3xl font-bold mb-4">Live Demo: Weather Checker</h2>
+          <h2 className="text-3xl font-bold mb-4 text-gray-100 drop-shadow-lg">Live Demo: Weather Checker</h2>
           <div className="bg-white p-6 rounded-lg shadow-lg">
             <label className="block mb-2 font-medium text-gray-700">City:</label>
             <input
@@ -148,7 +148,7 @@ function App() {
               value={city}
               onChange={(e) => setCity(e.target.value)}
               onKeyDown={(e) => { if (e.key === 'Enter') fetchWeather(); }}
-              className="border border-blue-800 p-2 rounded w-full max-w-xs focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="border border-black p-2 rounded w-full max-w-xs focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Type city & press Enter"
             />
             {weather ? (
@@ -163,23 +163,22 @@ function App() {
             )}
           </div>
         </section>
-<p className="text-lg leading-relaxed mt-4">
+<p className="text-lg leading-relaxed mt-4 text-gray-100 drop-shadow-lg">
   I am ager to bring my blend of <strong>technical curiosity </strong>and proven <strong>operational skills</strong> to work for you — let's connect!
 </p>
         {/* Contact */}
         <section>
-          <h2 className="text-3xl font-bold mb-4 mt-4">Contact</h2>
+          <h2 className="text-3xl font-bold mb-4 mt-4 text-gray-100 drop-shadow-lg">Contact</h2>
           <div className="flex flex-col sm:flex-row gap-4" >
-            <a href="mailto:romanaegis@gmail.com" className="bg-blue-800 text-white px-6 py-3 rounded-lg hover:bg-blue-900 transition-colors shadow-md inline-block">Email Me</a>
-            <a href="https://github.com/romanaegis" target="_blank" rel="noopener noreferrer" className="bg-blue-800 text-white px-6 py-3 rounded-lg hover:bg-blue-900 transition-colors shadow-md inline-block">GitHub</a>
-            <a href="https://x.com/romanaegis" target="_blank" rel="noopener noreferrer" className="bg-blue-800 text-white px-6 py-3 rounded-lg hover:bg-blue-900 transition-colors shadow-md inline-block">X (Twitter)</a>
-            <a href="https://www.linkedin.com/in/rome-colmenares/" target="_blank" rel="noopener noreferrer" className="bg-blue-800 text-white px-6 py-3 rounded-lg hover:bg-blue-900 transition-colors shadow-md inline-block">LinkedIn</a>
+            <a href="mailto:romanaegis@gmail.com" className="bg-black text-white px-6 py-3 rounded-lg hover:bg-blue-900 transition-colors shadow-md inline-block">Email Me</a>
+            <a href="https://github.com/romanaegis" target="_blank" rel="noopener noreferrer" className="bg-black text-white px-6 py-3 rounded-lg hover:bg-blue-900 transition-colors shadow-md inline-block">GitHub</a>
+            <a href="https://www.linkedin.com/in/rome-colmenares/" target="_blank" rel="noopener noreferrer" className="bg-black text-white px-6 py-3 rounded-lg hover:bg-blue-900 transition-colors shadow-md inline-block">LinkedIn</a>
           </div>
         </section>
       </main>
 
       <footer className="bg-gray-800 text-white p-4 text-center">
-        © {new Date().getFullYear()} Rome Aegis
+        © {new Date().getFullYear()} RomanAegis
       </footer>
     </div>
   );
