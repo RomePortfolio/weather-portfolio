@@ -83,6 +83,7 @@ export default function BillingCodes() {
       <form onSubmit={handleSearch} className="max-w-2xl mb-10">
         <div className="flex flex-col sm:flex-row gap-4">
           <input
+            id="bill-input"
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
