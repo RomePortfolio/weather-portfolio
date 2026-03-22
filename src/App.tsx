@@ -2,7 +2,7 @@ import Projects from './pages/projects';
 import About from './pages/about'; 
 import Contact from './pages/contact';
 import Skills from './pages/skills';
-
+import BillingCodes from './pages/billingCodes';
 
 function App() {
   return (
@@ -20,16 +20,17 @@ function App() {
             <a href="#about" className="hover:underline">About</a>
             <a href="#skills" className="hover:underline">Skills</a>
             <a href="#projects" className="hover:underline">Projects</a>
+            <a href='#billing-codes' className='hover:underline'>Billing Codes</a>
             <a href="#contact" className="hover:underline">Contact</a>
+
           </div>
         </div>
       </nav>
 
       {/* Your new hero header with skyline background */}
       <header
-        className="relative min-h-[200px] md:min-h-[300px] bg-cover bg-center bg-no-repeat flex items-center justify-center text-white overflow-hidden"
-        style={{ backgroundImage: "url('/images/skyline.png')" }}  // Make sure this image exists in public/images/
-      >
+        className="relative min-h-50 md:min-h-75 bg-cover bg-center bg-no-repeat flex items-center justify-center text-white overflow-hidden bg-[url('/images/skyline.png')]"
+>
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-black/60"></div>
 
@@ -47,6 +48,7 @@ function App() {
         <About />
         <Skills />
         <Projects />
+        <BillingCodes />
         <Contact />
       </main>
 

@@ -1,8 +1,12 @@
+/* Tailwind v4 – single import + preflight reset */
 @import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Optional: if you use @layer components or custom base styles */
+@layer base {
+  /* any global resets or base styles here if needed */
+}
+
+/* Your custom styles (keep these) */
 @keyframes gradient {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -11,7 +15,7 @@
 
 html {
   scroll-padding-top: 6rem;
-  scroll-behavior: smooth;    
+  scroll-behavior: smooth;
 }
 
 .bg-animated {

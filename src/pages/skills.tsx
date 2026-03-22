@@ -18,7 +18,7 @@ export default function Skills() {
           "Linux/Unix Basics",
           "Networking & Security",
           "CompTIA Security+",
-          "Instructional Design",
+          "ATD Instructional Design",
         ].map((skill, i) => (
           <div
             key={i}
