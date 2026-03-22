@@ -6,7 +6,7 @@ import BillingCodes from './pages/billingCodes';
 
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-950 flex flex-col">
+    <div className="min-h-screen bg-linear-to-br from-blue-900 via-indigo-900 to-purple-950 flex flex-col">
       {/* Navigation Bar – keep sticky on top */}
       <nav className="bg-black/50 backdrop-blur-md text-white p-4 sticky top-0 z-50 shadow-md">
         <div className="max-w-4xl mx-auto flex justify-between items-center">
@@ -44,7 +44,7 @@ function App() {
       </header>
 
       {/* Main content – now starts below the hero */}
-      <main className="flex-grow container mx-auto p-6 max-w-4xl pt-12 md:pt-16">
+      <main className="grow container mx-auto p-6 max-w-4xl pt-12 md:pt-16">
         <About />
         <Skills />
         <Projects />

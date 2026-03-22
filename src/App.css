@@ -74,6 +74,10 @@ body {
   }
 }
 
+.hero-bg {
+  background-image: url('/images/skyline.png');
+}
+
 #center {
   display: flex;
   flex-direction: column;

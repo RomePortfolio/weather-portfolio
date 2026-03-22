@@ -15,7 +15,7 @@ export default function Contact() {
       <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center">
         <a
           href="mailto:romanaegis@gmail.com"
-          className="bg-gradient-to-r from-blue-700 to-indigo-700 text-white px-8 py-4 rounded-xl hover:from-blue-500 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-2xl font-medium text-lg inline-flex items-center justify-center min-w-[180px]"
+          className="bg-linear-to-r from-blue-700 to-indigo-700 text-white px-8 py-4 rounded-xl hover:from-blue-500 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-2xl font-medium text-lg inline-flex items-center justify-center min-w-45"
         >
           Email Me
         </a>
@@ -23,7 +23,7 @@ export default function Contact() {
           href="https://github.com/romanaegis"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-gradient-to-r from-blue-700 to-indigo-700 text-white px-8 py-4 rounded-xl hover:from-blue-500 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-2xl font-medium text-lg inline-flex items-center justify-center min-w-[180px]"
+          className="bg-linear-to-r from-blue-700 to-indigo-700 text-white px-8 py-4 rounded-xl hover:from-blue-500 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-2xl font-medium text-lg inline-flex items-center justify-center min-w-45"
         >
           GitHub
         </a>
@@ -31,7 +31,7 @@ export default function Contact() {
           href="https://www.linkedin.com/in/rome-colmenares/"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-gradient-to-r from-blue-700 to-indigo-700 text-white px-8 py-4 rounded-xl hover:from-blue-500 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-2xl font-medium text-lg inline-flex items-center justify-center min-w-[180px]"
+          className="bg-linear-to-r from-blue-700 to-indigo-700 text-white px-8 py-4 rounded-xl hover:from-blue-500 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-2xl font-medium text-lg inline-flex items-center justify-center min-w-45"
         >
           LinkedIn
         </a>

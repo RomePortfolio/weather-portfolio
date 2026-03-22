@@ -8,7 +8,7 @@ export default function About() {
       {/* Photo + intro paragraph side-by-side on desktop */}
       <div className="flex flex-col md:flex-row gap-8 md:gap-12 mb-10">
         {/* Portrait – fixed size */}
-        <div className="flex-shrink-0 mx-auto md:mx-0">
+        <div className="shrink-0 mx-auto md:mx-0">
           <img
             src="/images/image.jpg"
             alt="Rome Colmenares portrait"
