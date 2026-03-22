@@ -66,7 +66,7 @@ function App() {
 
   return (
 
-<div className="min-h-screen bg-gradient-to-br from-blue-800 via-indigo-800 to-purple-800 bg-red-100 flex flex-col">      {/* Header */}
+<div className="min-h-screen bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-950 bg-red-100 flex flex-col">      {/* Header */}
 <header 
   className="relative min-h-[200px] bg-cover bg-center bg-no-repeat flex items-center justify-center text-white overflow-hidden"
   style={{ backgroundImage: "url('/images/skyline.png')" }}
