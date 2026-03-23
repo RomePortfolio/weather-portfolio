@@ -5,7 +5,7 @@ export default function Contact() {
         Contact
       </h2>
 
-      {/* Your eager-to-connect message */}
+      {/* connect message */}
       <p className="text-lg md:text-xl leading-relaxed text-gray-200 mb-10 max-w-3xl">
         I am eager to bring my blend of <strong className="text-blue-300">technical curiosity</strong> and proven{" "}
         <strong className="text-blue-300">operational skills</strong> to work for you — let's connect!

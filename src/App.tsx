@@ -7,7 +7,7 @@ import BillingCodes from './pages/billingCodes';
 function App() {
   return (
     <div className="min-h-screen bg-linear-to-br from-blue-900 via-indigo-900 to-purple-950 flex flex-col">
-      {/* Navigation Bar – keep sticky on top */}
+      {/* Navigation Bar */}
       <nav className="bg-black/50 backdrop-blur-md text-white p-4 sticky top-0 z-50 shadow-md">
         <div className="max-w-4xl mx-auto flex justify-between items-center">
         <h1 className="text-2xl font-bold">
@@ -27,11 +27,11 @@ function App() {
         </div>
       </nav>
 
-      {/* Your new hero header with skyline background */}
+      {/* hero header */}
       <header
         className="relative min-h-50 md:min-h-75 bg-cover bg-center bg-no-repeat flex items-center justify-center text-white overflow-hidden bg-[url('/images/skyline.png')]"
 >
-        {/* Dark overlay for text readability */}
+        {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/60"></div>
 
         {/* Content */}
@@ -43,7 +43,7 @@ function App() {
         </div>
       </header>
 
-      {/* Main content – now starts below the hero */}
+      {/* Main content */}
       <main className="grow container mx-auto p-6 max-w-4xl pt-12 md:pt-16">
         <About />
         <Skills />

@@ -1,10 +1,11 @@
 export default function Skills() {
   return (
     <section id="skills" className="mb-16">
+    {/* skills */}
       <h2 className="text-4xl md:text-5xl font-bold mb-10 text-gray-100 drop-shadow-lg">
         Skills
       </h2>
-
+    {/* grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {[
           "Amazon Web Services (AWS, Lambda, S3, DynamoDB, Amplify)",

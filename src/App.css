@@ -26,8 +26,8 @@
 }
 
 html {
-  scroll-padding-top: 4rem;   /* 96px — good buffer for your sticky nav + hero */
-  scroll-behavior: smooth;    /* smooth scrolling instead of instant jump */
+  scroll-padding-top: 4rem;   
+  scroll-behavior: smooth;    
 }
 
 body {

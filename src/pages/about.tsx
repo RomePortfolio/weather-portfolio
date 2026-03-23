@@ -5,9 +5,9 @@ export default function About() {
         About Me
       </h2>
 
-      {/* Photo + intro paragraph side-by-side on desktop */}
+      {/* Photo + intro */}
       <div className="flex flex-col md:flex-row gap-8 md:gap-12 mb-10">
-        {/* Portrait – fixed size */}
+        {/* Portrait  */}
         <div className="shrink-0 mx-auto md:mx-0">
           <img
             src="/images/image.jpg"
@@ -16,7 +16,7 @@ export default function About() {
           />
         </div>
 
-        {/* Intro text (stays next to photo on desktop) */}
+        {/* Intro text */}
         <div className="flex-1 space-y-6 text-gray-200 text-lg leading-relaxed">
           <p>
             A recent graduate with an <strong className="text-blue-300">Associate’s degree</strong> in Cloud Computing, passionate about serverless architecture, AWS, and building practical, user-focused applications. Currently deepening my skills in React + TypeScript, Python, and Golang.
@@ -28,7 +28,7 @@ export default function About() {
         </div>
       </div>
 
-      {/* All remaining content – now full-width, flows normally after photo */}
+      {/* content */}
       <div className="space-y-6 text-gray-200 text-lg leading-relaxed">
         {/* Bullets */}
         <ul className="space-y-4 pl-6 list-none">

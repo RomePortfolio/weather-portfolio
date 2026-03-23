@@ -1,12 +1,16 @@
 import { useState } from 'react';
+interface BillingCode {
+  code: string;
+  desc: string;
+}
 
 export default function BillingCodes() {
   const [query, setQuery] = useState('');
-  const [results, setResults] = useState<any[]>([]);
+  const [results, setResults] = useState<BillingCode[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Clear function — now at component level so button can see it
+  // Clear function
   const clearResults = () => {
     setQuery('');
     setResults([]);
@@ -22,7 +26,7 @@ export default function BillingCodes() {
     setResults([]);
 
     try {
-      // Your proxy fetch
+      // Proxy fetch
       const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(
         `https://www.icd10data.com/search?s=${encodeURIComponent(query)}`
       )}`;
@@ -37,30 +41,33 @@ export default function BillingCodes() {
       const parser = new DOMParser();
       const doc = parser.parseFromString(text, 'text/html');
 
-      // Your parsing logic (no change needed here)
+      // Parsing logic
       let items = doc.querySelectorAll('.search-result-item, .result-item, li.result, .code-result, div.result');
       if (items.length === 0) {
-        items = doc.querySelectorAll('li, div, p');
+        items = doc.querySelectorAll('li, div, p'); // broader fallback
       }
 
       const parsedResults = Array.from(items)
         .map(item => {
           const text = item.textContent?.trim() || '';
-          const codeMatch = text.match(/\b([A-Z]\d{2}(?:\.\d{1,3})?|9\d{4})\b/);
+          // Match common 
+          const codeMatch = text.match(/\b([A-Z]\d{2}(?:\.\d{1,3})?|9\d{4}|\d{4,5})\b/);
           if (!codeMatch) return null;
 
           const code = codeMatch[0];
           let desc = text.replace(code, '').trim().replace(/\s+/g, ' ');
-          if (desc.length < 10) desc = item.querySelector('p, span, div')?.textContent?.trim() || 'No description';
+          if (desc.length < 10) {
+            desc = item.querySelector('p, span, div')?.textContent?.trim() || 'No description';
+          }
 
           return { code, desc };
         })
-        .filter(Boolean) as { code: string; desc: string }[];
+        .filter((item): item is BillingCode => item !== null);
 
       if (parsedResults.length === 0) {
         setError('No codes found – try a specific code like "E11.9" or "99214". Site structure may have changed.');
       } else {
-        setResults(parsedResults.slice(0, 10));
+        setResults(parsedResults.slice(0, 10)); 
       }
     } catch (err) {
       setError((err as Error).message || 'Failed to fetch codes – try again');
@@ -99,7 +106,7 @@ export default function BillingCodes() {
           </button>
           <button
             type="button"
-            onClick={clearResults}  // Now visible!
+            onClick={clearResults}
             disabled={loading || (!query.trim() && results.length === 0 && !error)}
             className="bg-gray-700 text-white px-8 py-4 rounded-xl hover:bg-gray-600 transition disabled:opacity-50 font-medium text-lg"
           >
