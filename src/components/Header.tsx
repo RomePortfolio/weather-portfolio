@@ -35,9 +35,7 @@ const Header = () => {
           <NavLink 
             to="/#about" 
             onClick={() => handleScroll('about')}
-            className={({ isActive }) => 
-              `text-white/90 hover:text-sky-400 transition-colors ${isActive ? 'text-sky-400' : ''}`
-            }
+            className="text-white/90 hover:text-sky-400 transition-colors"
           >
             About
           </NavLink>
@@ -46,15 +44,22 @@ const Header = () => {
           <NavLink 
             to="/#skills" 
             onClick={() => handleScroll('skills')}
-            className={({ isActive }) => 
-              `text-white/90 hover:text-sky-400 transition-colors ${isActive ? 'text-sky-400' : ''}`
-            }
+            className="text-white/90 hover:text-sky-400 transition-colors"
           >
             Skills
           </NavLink>
 
-          {/* Projects Dropdown */}
-          <div className="relative group">
+          {/* Contact */}
+          <NavLink 
+            to="/#contact" 
+            onClick={() => handleScroll('contact')}
+            className="text-white/90 hover:text-sky-400 transition-colors"
+          >
+            Contact
+          </NavLink>
+
+          {/* Projects Dropdown - Far Right */}
+          <div className="relative group ml-auto">
             <button 
               className="flex items-center gap-1 text-white/90 hover:text-sky-400 transition-colors"
             >
@@ -97,17 +102,6 @@ const Header = () => {
               </div>
             </div>
           </div>
-
-          {/* Contact */}
-          <NavLink 
-            to="/#contact" 
-            onClick={() => handleScroll('contact')}
-            className={({ isActive }) => 
-              `text-white/90 hover:text-sky-400 transition-colors ${isActive ? 'text-sky-400' : ''}`
-            }
-          >
-            Contact
-          </NavLink>
         </nav>
       </div>
     </header>
