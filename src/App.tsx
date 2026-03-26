@@ -1,4 +1,3 @@
-// src/App.tsx
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -24,8 +23,6 @@ function App() {
             
             <Route path="/projects/weather" element={<WeatherPage />} />
             <Route path="/projects/medical" element={<MedicalPage />} />
-            
-            {/* These two must be exact */}
             <Route path="/projects/resume-tailor" element={<ResumeTailorPage />} />
             <Route path="/projects/resume-checker" element={<ResumeCheckerPage />} />
           </Routes>

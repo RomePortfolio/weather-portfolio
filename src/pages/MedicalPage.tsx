@@ -1,4 +1,3 @@
-// src/pages/MedicalPage.tsx
 import { useState } from 'react';
 
 interface BillingCode {
@@ -28,7 +27,7 @@ export default function MedicalPage() {
     setResults([]);
 
     try {
-      // Proxy fetch (exactly as before)
+      // Proxy fetch 
       const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(
         `https://www.icd10data.com/search?s=${encodeURIComponent(query)}`
       )}`;
@@ -43,10 +42,10 @@ export default function MedicalPage() {
       const parser = new DOMParser();
       const doc = parser.parseFromString(text, 'text/html');
 
-      // Parsing logic (unchanged)
+      // Parsing logic
       let items = doc.querySelectorAll('.search-result-item, .result-item, li.result, .code-result, div.result');
       if (items.length === 0) {
-        items = doc.querySelectorAll('li, div, p'); // broader fallback
+        items = doc.querySelectorAll('li, div, p'); 
       }
 
       const parsedResults = Array.from(items)

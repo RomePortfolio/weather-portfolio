@@ -1,4 +1,3 @@
-// src/pages/home.tsx
 import { useEffect } from 'react';
 import About from './about';
 import Skills from './skills';
@@ -31,11 +30,11 @@ const ScrollToHash = () => {
 
 export default function Home() {
   return (
-    <div className="max-w-4xl mx-auto px-6 pt-4">   {/* Reduced top padding */}
+    <div className="max-w-4xl mx-auto px-6 pt-4"> 
       <ScrollToHash />
 
-      {/* About Section - Aligned left with photo frame */}
-      <div id="about" className="-ml-6">   {/* Slight left shift to align "R" and "A" */}
+      {/* About */}
+      <div id="about" className="-ml-6"> 
         <About />
       </div>
 

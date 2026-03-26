@@ -1,4 +1,3 @@
-// src/pages/ResumeTailorPage.tsx
 const ResumeTailorPage = () => {
   return (
     <div className="min-h-screen bg-linear-to-br from-blue-900 via-indigo-900 to-purple-950 text-white pt-20 pb-12">

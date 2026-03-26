@@ -1,4 +1,3 @@
-// src/components/Header.tsx
 import { NavLink } from 'react-router-dom';
 
 const Header = () => {
@@ -20,7 +19,7 @@ const Header = () => {
     <header className="bg-black/50 backdrop-blur-md text-white p-4 sticky top-0 z-50 shadow-md">
       <div className="max-w-4xl mx-auto flex justify-between items-center">
         
-        {/* Logo / Name */}
+        {/* Name */}
         <NavLink 
           to="/" 
           className="text-2xl font-bold hover:text-sky-400 transition-colors"
@@ -58,7 +57,7 @@ const Header = () => {
             Contact
           </NavLink>
 
-          {/* Projects Dropdown - Far Right */}
+          {/* Projects Dropdown */}
           <div className="relative group ml-auto">
             <button 
               className="flex items-center gap-1 text-white/90 hover:text-sky-400 transition-colors"

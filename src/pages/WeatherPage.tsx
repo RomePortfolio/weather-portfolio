@@ -1,4 +1,3 @@
-// src/pages/WeatherPage.tsx
 import { useState, useEffect } from 'react';
 
 // WMO weather code to human-readable
@@ -46,7 +45,7 @@ interface OpenMeteoForecast {
   };
 
   daily?: {
-    time: string[]; // ISO dates like "2025-03-24"
+    time: string[]; 
     temperature_2m_max: number[];
     temperature_2m_min: number[];
     weather_code: number[];
