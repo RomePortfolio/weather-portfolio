@@ -15,7 +15,7 @@ export default function Skills() {
           "Serverless Architecture",
           "React + TypeScript",
           "Python Programming",
-          "Golang",
+          "n8n Automation",
           "Git & GitHub",
           "Docker & Containers (Basics)",
           "Linux/Unix Basics",

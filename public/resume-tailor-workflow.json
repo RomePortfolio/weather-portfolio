@@ -1,0 +1,162 @@
+{
+  "name": "Resume Tailor Automator",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "9ea713c2-62e7-4eb8-b701-ea8428063619",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "605a7e52-935e-46ea-aca9-3ea9662d6cc1",
+              "name": "jobDescription",
+              "value": "We are looking for a Senior React Developer with strong experience in TypeScript, Tailwind CSS, AWS Amplify, and building clean, responsive portfolios. Must have experience with automation tools and AI integrations.",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        208,
+        0
+      ],
+      "id": "a6ef8b54-b023-46fe-899d-289bfcb0d84e",
+      "name": "Job Description"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "6750406c-91c1-43bb-9dcb-5daa3d0f0aaf",
+              "name": "resumeText",
+              "value": "Rome Colmenares React Developer \n TypeScript \n Tailwind Experienced in building modern web applications and deploying on AWS.",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        416,
+        0
+      ],
+      "id": "d24128dc-350b-48c9-954b-20b6aae137bc",
+      "name": "Candidate Resume"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are a senior technical recruiter and expert resume writer who specializes in ATS optimization.\n\nJob Description:\n{{$json[\"jobDescription\"]}}\n\nOriginal Resume:\n{{$json[\"resumeText\"]}}\n\nTask:\nCreate a highly tailored version of the resume for this exact job.\n\nRules:\n- Be 100% truthful — only use information that exists in the original resume. Do not invent achievements, numbers, or experience.\n- Heavily incorporate keywords and requirements from the job description naturally.\n- Rewrite bullet points to be achievement-oriented and impactful.\n- Make the candidate sound like the ideal fit for this role without exaggeration.\n- Use strong action verbs.\n- Structure the output exactly as:\n  - ### Professional Summary (3-4 lines)\n  - ### Experience (bullet points)\n  - ### Skills (relevant bullets only)\n  - ### Education (if present, otherwise \"Not provided\")\n\nOutput ONLY the Markdown-formatted resume. No extra text, no explanations.",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        560,
+        0
+      ],
+      "id": "366c03ab-a1af-480d-8c3b-30e1e5515e3a",
+      "name": "Tailor Resume with AI"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "llama-3.3-70b-versatile",
+          "mode": "list",
+          "cachedResultName": "llama-3.3-70b-versatile"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        432,
+        208
+      ],
+      "id": "7a132031-0a9a-486a-931c-a5fd89713bf7",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "hwlPIMsmhbn01KSt",
+          "name": "OpenAi account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Job Description",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Job Description": {
+      "main": [
+        [
+          {
+            "node": "Candidate Resume",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Candidate Resume": {
+      "main": [
+        [
+          {
+            "node": "Tailor Resume with AI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Tailor Resume with AI",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "21025abd-2409-49be-a3d5-b7721e8372da",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "8352e10d8178f099205ae609a124756c89cbc8e89746005f35d38aaf8af6581e"
+  },
+  "id": "A7XPP7hWXa7VUixW",
+  "tags": []
+}

@@ -1,3 +1,4 @@
+// src/pages/WeatherPage.tsx
 import { useState, useEffect } from 'react';
 
 // WMO weather code to human-readable
@@ -57,7 +58,7 @@ interface OpenMeteoForecast {
   };
 }
 
-export default function Projects() {
+export default function WeatherPage() {
   const [city, setCity] = useState('Houston');
   const [displayLocation, setDisplayLocation] = useState('Houston');
   const [weather, setWeather] = useState<OpenMeteoForecast | null>(null);
@@ -98,7 +99,6 @@ export default function Projects() {
     setLoading(true);
     setError(null);
     try {
-      // Use only city name for geocoding
       const cityOnly = city.split(',')[0].trim();
 
       const geoUrl = `https://geocoding-api.open-meteo.com/v1/search?` +
@@ -121,7 +121,6 @@ export default function Projects() {
 
       await fetchWeather(latitude, longitude);
 
-      //  display
       let display = name || cityOnly;
       if (admin1) display += `, ${admin1}`;
       if (country) display += `, ${country}`;
@@ -134,13 +133,20 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="mb-16">
-      <h2 className="text-3xl font-bold mb-4 text-white">Projects & Live Demo</h2>
+    <div className="max-w-4xl mx-auto px-6 py-12">
+      <h1 className="text-4xl md:text-5xl font-bold mb-8 text-white tracking-tight">
+        Weather Lookup
+      </h1>
 
-      <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-gray-700 shadow-lg">
-        <h3 className="text-2xl font-semibold mb-4 text-white">Weather Checker Demo (Houston default)</h3>
+      <p className="text-lg text-gray-200 mb-8 max-w-3xl">
+        Real-time weather and 7-day forecast powered by Open-Meteo. 
+        Default starts with Houston — search any major US city.
+      </p>
 
-        <form onSubmit={handleSubmit} className="space-y-4 mb-6">
+      <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-gray-700 shadow-lg">
+        <h2 className="text-2xl font-semibold mb-6 text-white">Live Weather Checker</h2>
+
+        <form onSubmit={handleSubmit} className="space-y-4 mb-8">
           <div>
             <label 
               htmlFor="city-input" 
@@ -161,58 +167,61 @@ export default function Projects() {
           <button 
             type="submit"
             disabled={loading}
-            className="bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700 transition disabled:opacity-50 font-medium text-lg"
+            className="bg-blue-600 text-white px-8 py-3 rounded-xl hover:bg-blue-700 transition disabled:opacity-50 font-medium text-lg"
           >
             {loading ? 'Fetching...' : 'Check Weather'}
           </button>
         </form>
 
-        {error && <p className="text-red-400 font-medium mb-4">{error}</p>}
+        {error && <p className="text-red-400 font-medium mb-6">{error}</p>}
 
-{weather && !loading && !error && weather.current && weather.daily && (
-  <div className="mt-6">
-    {/* Current weather card */}
-    <div className="bg-blue-900/30 p-6 rounded-xl mb-8 text-center border border-blue-500/30">
-      <h3 className="text-xl font-semibold mb-3 text-white">
-        Current in {displayLocation}
-      </h3>
-      <p className="text-5xl font-bold text-white">
-        {weather.current.temperature_2m}°F
-      </p>
-      <p className="text-lg mt-2 text-gray-300">
-        Feels like {weather.current.apparent_temperature}°F
-      </p>
-      <p className="text-lg capitalize mt-3 text-blue-300">
-        {getWeatherDescription(weather.current.weather_code)}
-      </p>
-    </div>
+        {weather && !loading && !error && weather.current && weather.daily && (
+          <div>
+            {/* Current weather card */}
+            <div className="bg-blue-900/30 p-8 rounded-2xl mb-10 text-center border border-blue-500/30">
+              <h3 className="text-2xl font-semibold mb-4 text-white">
+                Current in {displayLocation}
+              </h3>
+              <p className="text-6xl font-bold text-white mb-2">
+                {weather.current.temperature_2m}°F
+              </p>
+              <p className="text-xl text-gray-300">
+                Feels like {weather.current.apparent_temperature}°F
+              </p>
+              <p className="text-xl capitalize mt-4 text-blue-300">
+                {getWeatherDescription(weather.current.weather_code)}
+              </p>
+            </div>
 
-    {/* 7-Day Forecast */}
-    <h3 className="text-xl font-semibold mb-4 text-white">7-Day Forecast</h3>
-<div className="grid grid-cols-2 sm:grid-cols-7 gap-4">
-  {weather.daily!.time.map((date: string, index: number) => (
-    <div 
-      key={date} 
-      className="bg-gray-800/50 p-4 rounded-xl text-center border border-gray-700 hover:border-blue-500 transition"
-    >
-      <p className="font-medium text-sm text-gray-300">
-        {new Date(date).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })}
-      </p>
-      <p className="text-lg font-bold mt-2 text-white">
-        {weather.daily!.temperature_2m_max[index]}° / {weather.daily!.temperature_2m_min[index]}°
-      </p>
-      <p className="text-sm capitalize mt-2 text-blue-300">
-        {getWeatherDescription(weather.daily!.weather_code[index])}
-      </p>
-    </div>
-  ))}
-</div>  </div>
-)}
+            {/* 7-Day Forecast */}
+            <h3 className="text-2xl font-semibold mb-6 text-white">7-Day Forecast</h3>
+            <div className="grid grid-cols-2 sm:grid-cols-7 gap-4">
+              {weather.daily.time.map((date: string, index: number) => (
+                <div 
+                  key={date} 
+                  className="bg-gray-800/50 p-6 rounded-2xl text-center border border-gray-700 hover:border-blue-500 transition-all duration-300"
+                >
+                  <p className="font-medium text-sm text-gray-300">
+                    {new Date(date).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })}
+                  </p>
+                  <p className="text-2xl font-bold mt-4 text-white">
+                    {weather.daily!.temperature_2m_max[index]}° / {weather.daily!.temperature_2m_min[index]}°
+                  </p>
+                  <p className="text-sm capitalize mt-3 text-blue-300">
+                    {getWeatherDescription(weather.daily!.weather_code[index])}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
-        {loading && <p className="text-blue-400 mt-6 text-center">Loading weather...</p>}
+        {loading && <p className="text-blue-400 mt-8 text-center text-lg">Loading weather...</p>}
       </div>
 
-      <p className="mt-8 text-gray-200">More projects (e.g., billing code explorer, serverless backend) coming soon!</p>
-    </section>
+      <p className="mt-12 text-gray-400 text-center">
+        Powered by Open-Meteo • Free &amp; no API key required
+      </p>
+    </div>
   );
 }

@@ -1,61 +1,39 @@
-import Projects from './pages/projects'; 
-import About from './pages/about'; 
-import Contact from './pages/contact';
-import Skills from './pages/skills';
-import BillingCodes from './pages/billingCodes';
+// src/App.tsx
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/Header';
+import Footer from './components/Footer';
+
+import HomePage from './pages/home';
+import ProjectsPage from './pages/ProjectsPage';
+import WeatherPage from './pages/WeatherPage';
+import MedicalPage from './pages/MedicalPage';
+import ResumeTailorPage from './pages/ResumeTailorPage';
+import ResumeCheckerPage from './pages/ResumeCheckerPage';
 
 function App() {
   return (
-    <div className="min-h-screen bg-linear-to-br from-blue-900 via-indigo-900 to-purple-950 flex flex-col">
-      {/* Navigation Bar */}
-      <nav className="bg-black/50 backdrop-blur-md text-white p-4 sticky top-0 z-50 shadow-md">
-        <div className="max-w-4xl mx-auto flex justify-between items-center">
-        <h1 className="text-2xl font-bold">
-        <a href="#" className="hover:text-blue-300 transition-colors">
-         Rome Colmenares Portfolio
-        </a>
-        </h1>
-          <div className="flex gap-6 text-sm">
-            <a href="#" className="hover:underline">Home</a>
-            <a href="#about" className="hover:underline">About</a>
-            <a href="#skills" className="hover:underline">Skills</a>
-            <a href="#projects" className="hover:underline">Projects</a>
-            <a href='#billing-codes' className='hover:underline'>Billing Codes</a>
-            <a href="#contact" className="hover:underline">Contact</a>
-
-          </div>
-        </div>
-      </nav>
-
-      {/* hero header */}
-      <header
-        className="relative min-h-50 md:min-h-75 bg-cover bg-center bg-no-repeat flex items-center justify-center text-white overflow-hidden bg-[url('/images/skyline.png')]"
->
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/60"></div>
-
-        {/* Content */}
-        <div className="relative z-10 text-center px-4">
-          <h1 className="text-5xl md:text-6xl font-bold tracking-tight">Rome Colmenares</h1>
-          <p className="mt-3 text-xl md:text-2xl opacity-90">
-            Cloud Computing Professional | Houston, TX
-          </p>
-        </div>
-      </header>
-
-      {/* Main content */}
-      <main className="grow container mx-auto p-6 max-w-4xl pt-12 md:pt-16">
-        <About />
-        <Skills />
-        <Projects />
-        <BillingCodes />
-        <Contact />
-      </main>
-
-      <footer className="bg-black/50 text-white p-6 text-center">
-        © {new Date().getFullYear()} Rome Colmenares
-      </footer>
-    </div>
+    <Router>
+      <div className="min-h-screen bg-linear-to-br from-blue-900 via-indigo-900 to-purple-950 flex flex-col text-white">
+        <Header />
+        
+        <main className="flex-1 pt-20">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            
+            <Route path="/projects" element={<ProjectsPage />} />
+            
+            <Route path="/projects/weather" element={<WeatherPage />} />
+            <Route path="/projects/medical" element={<MedicalPage />} />
+            
+            {/* These two must be exact */}
+            <Route path="/projects/resume-tailor" element={<ResumeTailorPage />} />
+            <Route path="/projects/resume-checker" element={<ResumeCheckerPage />} />
+          </Routes>
+        </main>
+        
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

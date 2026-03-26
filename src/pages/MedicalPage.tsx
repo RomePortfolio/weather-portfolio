@@ -1,10 +1,12 @@
+// src/pages/MedicalPage.tsx
 import { useState } from 'react';
+
 interface BillingCode {
   code: string;
   desc: string;
 }
 
-export default function BillingCodes() {
+export default function MedicalPage() {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<BillingCode[]>([]);
   const [loading, setLoading] = useState(false);
@@ -26,7 +28,7 @@ export default function BillingCodes() {
     setResults([]);
 
     try {
-      // Proxy fetch
+      // Proxy fetch (exactly as before)
       const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(
         `https://www.icd10data.com/search?s=${encodeURIComponent(query)}`
       )}`;
@@ -41,7 +43,7 @@ export default function BillingCodes() {
       const parser = new DOMParser();
       const doc = parser.parseFromString(text, 'text/html');
 
-      // Parsing logic
+      // Parsing logic (unchanged)
       let items = doc.querySelectorAll('.search-result-item, .result-item, li.result, .code-result, div.result');
       if (items.length === 0) {
         items = doc.querySelectorAll('li, div, p'); // broader fallback
@@ -50,7 +52,6 @@ export default function BillingCodes() {
       const parsedResults = Array.from(items)
         .map(item => {
           const text = item.textContent?.trim() || '';
-          // Match common 
           const codeMatch = text.match(/\b([A-Z]\d{2}(?:\.\d{1,3})?|9\d{4}|\d{4,5})\b/);
           if (!codeMatch) return null;
 
@@ -71,20 +72,21 @@ export default function BillingCodes() {
       }
     } catch (err) {
       setError((err as Error).message || 'Failed to fetch codes – try again');
-      console.error(err);
+      console.error('Medical fetch error:', err);
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <section id="billing-codes" className="mb-16">
-      <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white tracking-tight">
+    <div className="max-w-4xl mx-auto px-6 py-12">
+      <h1 className="text-4xl md:text-5xl font-bold mb-8 text-white tracking-tight">
         Medical Billing Code Explorer
-      </h2>
+      </h1>
 
       <p className="text-lg text-gray-200 mb-8 max-w-3xl">
-        Search ICD-10 diagnosis and CPT procedure codes with live results. Useful for medical billing, coding practice, and understanding healthcare data.
+        Search ICD-10 diagnosis and CPT procedure codes with live results. 
+        Useful for medical billing, coding practice, and understanding healthcare data.
       </p>
 
       <form onSubmit={handleSearch} className="max-w-2xl mb-10">
@@ -139,6 +141,6 @@ export default function BillingCodes() {
       {!loading && !error && results.length === 0 && query && (
         <p className="text-gray-400 text-lg">No results yet — try a code like "E11.9" or "chest pain"</p>
       )}
-    </section>
+    </div>
   );
 }
