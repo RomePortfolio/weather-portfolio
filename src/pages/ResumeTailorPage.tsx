@@ -208,7 +208,7 @@ University of Houston`);
         </div>
 
         <p className="text-center text-white/60 pt-8 text-sm">
-          Live demo powered by n8n on Railway + Groq AI
+          Live demo powered by n8n on Railway • Groq Llama 3.3 • Samples included for quick testing
         </p>
       </div>
     </ProjectPage>
