@@ -2,24 +2,13 @@
   "name": "Resume Tailor Automator",
   "nodes": [
     {
-      "parameters": {},
-      "type": "n8n-nodes-base.manualTrigger",
-      "typeVersion": 1,
-      "position": [
-        0,
-        0
-      ],
-      "id": "9ea713c2-62e7-4eb8-b701-ea8428063619",
-      "name": "When clicking ‘Execute workflow’"
-    },
-    {
       "parameters": {
         "assignments": {
           "assignments": [
             {
               "id": "605a7e52-935e-46ea-aca9-3ea9662d6cc1",
               "name": "jobDescription",
-              "value": "We are looking for a Senior React Developer with strong experience in TypeScript, Tailwind CSS, AWS Amplify, and building clean, responsive portfolios. Must have experience with automation tools and AI integrations.",
+              "value": "{{$json[\"body\"][\"jobDescription\"]}}",
               "type": "string"
             }
           ]
@@ -42,7 +31,7 @@
             {
               "id": "6750406c-91c1-43bb-9dcb-5daa3d0f0aaf",
               "name": "resumeText",
-              "value": "Rome Colmenares React Developer \n TypeScript \n Tailwind Experienced in building modern web applications and deploying on AWS.",
+              "value": "{{$json[\"body\"][\"resumeText\"]}}",
               "type": "string"
             }
           ]
@@ -87,8 +76,8 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.3,
       "position": [
-        432,
-        208
+        560,
+        176
       ],
       "id": "7a132031-0a9a-486a-931c-a5fd89713bf7",
       "name": "OpenAI Chat Model",
@@ -98,21 +87,27 @@
           "name": "OpenAi account"
         }
       }
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "resume-tailor",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        32,
+        0
+      ],
+      "id": "f231b669-c1bf-43c1-9278-aa0bad9739da",
+      "name": "Webhook",
+      "webhookId": "7c3c9186-cd44-4143-87c2-0ad39388cffc"
     }
   ],
   "pinData": {},
   "connections": {
-    "When clicking ‘Execute workflow’": {
-      "main": [
-        [
-          {
-            "node": "Job Description",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Job Description": {
       "main": [
         [
@@ -145,6 +140,22 @@
           }
         ]
       ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Job Description",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tailor Resume with AI": {
+      "main": [
+        []
+      ]
     }
   },
   "active": false,
@@ -152,7 +163,7 @@
     "executionOrder": "v1",
     "binaryMode": "separate"
   },
-  "versionId": "21025abd-2409-49be-a3d5-b7721e8372da",
+  "versionId": "89545344-9c47-47ce-af56-b4c0f7838ae6",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "8352e10d8178f099205ae609a124756c89cbc8e89746005f35d38aaf8af6581e"
