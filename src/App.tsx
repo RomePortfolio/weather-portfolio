@@ -9,6 +9,8 @@ import WeatherPage from './pages/WeatherPage';
 import MedicalPage from './pages/MedicalPage';
 import ResumeTailorPage from './pages/ResumeTailorPage';
 import ResumeCheckerPage from './pages/ResumeCheckerPage';
+import BlogPage from './pages/BlogPage';
+import BlogPostPage from './pages/BlogPostPage';
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
             <Route path="/projects/medical" element={<MedicalPage />} />
             <Route path="/projects/resume-tailor" element={<ResumeTailorPage />} />
             <Route path="/projects/resume-checker" element={<ResumeCheckerPage />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/blog/:id" element={<BlogPostPage />} />
           </Routes>
         </main>
         

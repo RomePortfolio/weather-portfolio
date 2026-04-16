@@ -1,0 +1,10 @@
+{
+  "resourceName": "blogTable",
+  "tableName": "ITBlogPosts",
+  "partitionKey": {
+    "fieldName": "id",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

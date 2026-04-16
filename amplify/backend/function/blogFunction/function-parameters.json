@@ -1,0 +1,18 @@
+{
+  "lambdaLayers": [],
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "blogApiSecret",
+      "environmentVariableName": "BLOG_API_SECRET"
+    }
+  ],
+  "permissions": {
+    "storage": {
+      "blogTable": [
+        "create",
+        "read",
+        "update"
+      ]
+    }
+  }
+}

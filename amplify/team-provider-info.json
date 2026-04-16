@@ -1,0 +1,30 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-weatherportfolio-dev-1ff7c-authRole",
+      "UnauthRoleArn": "arn:aws:iam::561226080631:role/amplify-weatherportfolio-dev-1ff7c-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::561226080631:role/amplify-weatherportfolio-dev-1ff7c-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-weatherportfolio-dev-1ff7c-deployment",
+      "UnauthRoleName": "amplify-weatherportfolio-dev-1ff7c-unauthRole",
+      "StackName": "amplify-weatherportfolio-dev-1ff7c",
+      "StackId": "arn:aws:cloudformation:us-east-1:561226080631:stack/amplify-weatherportfolio-dev-1ff7c/4e5b9b20-3996-11f1-ad4c-0affcffa9711",
+      "AmplifyAppId": "d1dkqb7kqds2ld"
+    },
+    "categories": {
+      "function": {
+        "blogFunction": {
+          "blogApiSecret": "n8nBlogSecret2026!RomePortfolio",
+          "deploymentBucketName": "amplify-weatherportfolio-dev-1ff7c-deployment",
+          "s3Key": "amplify-builds/blogFunction-79713130626b4e574164-build.zip"
+        }
+      },
+      "api": {
+        "blogApi": {}
+      },
+      "storage": {
+        "blogTable": {}
+      }
+    }
+  }
+}
