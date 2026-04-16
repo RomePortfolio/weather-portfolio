@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 });
 
 const TABLE_NAME = process.env.STORAGE_BLOGTABLE_NAME || 'BlogPosts';
-const API_SECRET = process.env.BLOG_API_SECRET; // set this in Amplify env vars
+const API_SECRET = process.env.BLOG_API_SECRET;
 
 const client = new DynamoDBClient({});
 const docClient = DynamoDBDocumentClient.from(client);
