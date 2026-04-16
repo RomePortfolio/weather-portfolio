@@ -33,18 +33,18 @@ export default function Home() {
     <div className="max-w-4xl mx-auto px-6 pt-4"> 
       <ScrollToHash />
 
-      {/* About */}
-      <div id="about" className="-ml-6"> 
+{/* About */}
+      <div id="about"> 
         <About />
       </div>
 
       {/* Skills Section */}
-      <div id="skills" className="mt-24 -ml-6">
+      <div id="skills" className="mt-24">
         <Skills />
       </div>
 
       {/* Contact Section */}
-      <div id="contact" className="mt-24 -ml-6">
+      <div id="contact" className="mt-24">
         <Contact />
       </div>
     </div>

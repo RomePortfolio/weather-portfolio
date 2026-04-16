@@ -64,10 +64,9 @@ const Header = () => {
           >
             Contact
           </NavLink>
-          <NavLink to="/blog" className="hover:text-blue-300 transition-colors hidden md:block">
-            Blog
+          <NavLink to="/blog" className="hover:text-blue-300 transition-colors font-medium">
+              Blog
           </NavLink>
-
           {/* Projects Dropdown - Mobile Friendly */}
           <div className="relative">
             <button 
