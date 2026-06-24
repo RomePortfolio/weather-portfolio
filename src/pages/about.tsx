@@ -10,7 +10,7 @@ export default function About() {
         {/* Portrait  */}
         <div className="shrink-0 mx-auto md:mx-0">
           <img
-            src="/images/image.jpg"
+            src="/images/rome-portrait2.jpg"
             alt="Rome Colmenares portrait"
             className="w-64 h-80 md:w-80 md:h-96 rounded-[40%] object-cover shadow-2xl border-4 border-gray-700 hover:border-blue-500 transition-colors duration-300"
           />
@@ -19,11 +19,11 @@ export default function About() {
         {/* Intro text */}
         <div className="flex-1 space-y-6 text-gray-200 text-lg leading-relaxed">
           <p>
-            A recent graduate with an <strong className="text-blue-300">Associate’s degree</strong> in Cloud Computing, passionate about serverless architecture, AWS, and building practical, user-focused applications. Currently deepening my skills in React + TypeScript, Python, and Golang.
+            I pair an <strong className="text-blue-300">Associate’s degree in Cloud Computing</strong> and a <strong className="text-blue-300">CompTIA Security+</strong> certification with <strong className="text-blue-300">decades of professional experience</strong> in high-stakes environments — critical logistics for the airline industry and private contracting. The result is an early-career technologist who already knows how to lead teams, communicate clearly, and stay calm under pressure.
           </p>
 
           <p className="flex-1 space-y-6 text-gray-200 text-lg leading-relaxed">
-            I bring <strong className="text-blue-300">decades of professional experience</strong> in high-stakes environments, working in critical logistics for the airline industry, and as a private contractor. I have developed skills, both hard and soft, which make me a critical asset to any diverse team. 
+            I’m passionate about serverless architecture and AWS, and I build practical, user-focused applications — currently deepening my skills in React + TypeScript, Python, and Golang. I bring both the hard and soft skills that make me a critical asset to any diverse team.
           </p>
         </div>
       </div>
@@ -52,7 +52,7 @@ export default function About() {
 
         {/* Transition paragraph */}
         <p>
-          Now channeling that real-world expertise into cloud technologies — eager to bring proven leadership, communication, and operational skills to an entry-level cloud, DevOps, or developer role.
+          Now channeling that real-world expertise into cloud technologies — eager to bring proven leadership, communication, and operational skills to an entry-level cloud, support, security (SOC), or developer role.
         </p>
 
         {/* Personal note */}

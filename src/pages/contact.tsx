@@ -12,7 +12,16 @@ export default function Contact() {
       </p>
 
       {/* Buttons */}
-      <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center">
+      <div className="flex flex-col sm:flex-row flex-wrap gap-4 md:gap-6 justify-center">
+        <a
+          href="/Rome_Colmenares_Resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          download
+          className="bg-linear-to-r from-emerald-600 to-teal-700 text-white px-8 py-4 rounded-xl hover:from-emerald-500 hover:to-teal-600 transition-all duration-300 shadow-lg hover:shadow-2xl font-medium text-lg inline-flex items-center justify-center min-w-45"
+        >
+          Download Resume
+        </a>
         <a
           href="mailto:romanaegis@gmail.com"
           className="bg-linear-to-r from-blue-700 to-indigo-700 text-white px-8 py-4 rounded-xl hover:from-blue-500 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-2xl font-medium text-lg inline-flex items-center justify-center min-w-45"
