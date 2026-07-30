@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import About from './about';
+import FeaturedProjects from './FeaturedProjects';
 import Skills from './skills';
 import Contact from './contact';
 
@@ -36,6 +37,11 @@ export default function Home() {
 {/* About */}
       <div id="about"> 
         <About />
+      </div>
+
+      {/* Featured Projects */}
+      <div id="projects" className="mt-24">
+        <FeaturedProjects />
       </div>
 
       {/* Skills Section */}

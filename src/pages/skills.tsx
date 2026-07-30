@@ -8,18 +8,22 @@ export default function Skills() {
     {/* grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {[
-          "Amazon Web Services (AWS, Lambda, S3, DynamoDB, Amplify)",
-          "CompTIA Security+",
-          "ATD Instructional Design",
-          "Cloud Computing Fundamentals",
-          "Serverless Architecture",
-          "React + TypeScript",
-          "Python Programming",
+          "IT Support & Help Desk",
+          "CompTIA Security+ (DoD 8570 IAT Level II)",
+          "Windows & Microsoft 365",
+          "Ticketing & ITSM (ServiceNow, Jira)",
+          "Active Directory & Access Management",
+          "Networking & Security Fundamentals",
+          "ATD Instructional Design & Technical Training",
+          "Technical Writing & Documentation",
+          "LLM / Claude API & Agentic Workflows",
           "n8n Automation",
+          "Python & SQL",
+          "React + TypeScript",
+          "Amazon Web Services (Lambda, S3, DynamoDB, Amplify)",
+          "Cloudflare (Workers, D1, Pages)",
           "Git & GitHub",
-          "Docker & Containers (Basics)",
-          "Linux/Unix Basics",
-          "Networking & Security",
+          "Linux/Unix & Docker",
 
         ].map((skill, i) => (
           <div

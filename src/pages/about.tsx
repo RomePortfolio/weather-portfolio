@@ -19,11 +19,11 @@ export default function About() {
         {/* Intro text */}
         <div className="flex-1 space-y-6 text-gray-200 text-lg leading-relaxed">
           <p>
-            I pair an <strong className="text-blue-300">Associate’s degree in Cloud Computing</strong> and a <strong className="text-blue-300">CompTIA Security+</strong> certification with <strong className="text-blue-300">decades of professional experience</strong> in high-stakes environments — critical logistics for the airline industry and private contracting. The result is an early-career technologist who already knows how to lead teams, communicate clearly, and stay calm under pressure.
+            I pair an <strong className="text-blue-300">A.A.S. in Cloud Computing</strong> and a <strong className="text-blue-300">CompTIA Security+</strong> certification (DoD 8570 <strong className="text-blue-300">IAT Level II</strong>) with <strong className="text-blue-300">20+ years of front-line technical support</strong> in high-stakes environments: critical logistics for the airline industry, where my station posted the <strong className="text-blue-300">lowest error rate by volume</strong> of any station handling United Airlines’ PetSafe program.
           </p>
 
           <p className="flex-1 space-y-6 text-gray-200 text-lg leading-relaxed">
-            I’m passionate about serverless architecture and AWS, and I build practical, user-focused applications — currently deepening my skills in React + TypeScript, Python, and Golang. I bring both the hard and soft skills that make me a critical asset to any diverse team.
+            Today I run <strong className="text-blue-300">Birdseed Studios</strong>, where I build and support a production web application on Cloudflare and AWS, including LLM-powered features on the Claude API and multi-step automation workflows in n8n and Python. I am the person people come to when something breaks, and I am just as comfortable teaching the fix as making it.
           </p>
         </div>
       </div>
@@ -34,30 +34,30 @@ export default function About() {
         <ul className="space-y-4 pl-6 list-none">
           <li className="flex items-start gap-4">
             <span className="text-2xl text-blue-400 mt-1">→</span>
-            <span>Training & instruction — designed and delivered complex training programs for diverse teams, translating technical concepts into clear, actionable learning.</span>
+            <span>Technical support &amp; troubleshooting: two decades as the first point of contact by phone, email, and in person, resolving issues end to end and documenting every case.</span>
           </li>
           <li className="flex items-start gap-4">
             <span className="text-2xl text-blue-400 mt-1">→</span>
-            <span>Communications — excelled in stakeholder management, clear documentation, and cross-functional collaboration across departments and leadership levels.</span>
+            <span>Training &amp; instructional design (ATD): built and delivered technical training, e-learning, and documentation that turn complex requirements into clear, usable learning.</span>
           </li>
           <li className="flex items-start gap-4">
             <span className="text-2xl text-blue-400 mt-1">→</span>
-            <span>Logistics & operations — managed large-scale coordination, resource allocation, and process optimization under tight deadlines and high pressure.</span>
+            <span>Dispatch, logistics &amp; operations: 20+ years coordinating schedules, handoffs, and resources across multiple parties, triaging what breaks in real time under tight deadlines.</span>
           </li>
           <li className="flex items-start gap-4">
             <span className="text-2xl text-blue-400 mt-1">→</span>
-            <span>Management & leadership — led teams, mentored professionals, resolved conflicts, and drove performance in dynamic, results-oriented settings.</span>
+            <span>Management &amp; leadership: led and mentored teams, resolved conflicts, and drove performance and process improvement in results-oriented settings.</span>
           </li>
         </ul>
 
         {/* Transition paragraph */}
         <p>
-          Now channeling that real-world expertise into cloud technologies — eager to bring proven leadership, communication, and operational skills to an entry-level cloud, support, security (SOC), or developer role.
+          I am looking for a role in <strong className="text-blue-300">IT support, help desk, service desk, or technical training</strong>, remote or in the College Station and Bryan, Texas area. Security, identity and access, and cloud support are where I want to keep growing, and my Security+ and A.A.S. are pointed that direction.
         </p>
 
         {/* Personal note */}
         <p className="italic text-gray-300 border-l-4 border-blue-500 pl-6 py-2">
-          Outside of tech, I enjoy SciFi, animal training, and playing table top roleplaying games — always looking for ways to blend curiosity with practical problem-solving.
+          Outside of tech, I enjoy SciFi, animal training, and tabletop roleplaying games, always looking for ways to blend curiosity with practical problem-solving.
         </p>
       </div>
     </section>

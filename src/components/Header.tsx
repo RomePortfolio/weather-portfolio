@@ -109,13 +109,6 @@ const Header = () => {
               >
                 Resume Tailoring Automator
               </NavLink>
-              <NavLink 
-                to="/projects/resume-checker" 
-                onClick={() => setIsProjectsOpen(false)}
-                className="block px-4 py-3 hover:bg-white/10 hover:text-blue-300 transition-colors"
-              >
-                AI Resume Checker for Recruiters
-              </NavLink>
             </div>
           </div>
         </nav>

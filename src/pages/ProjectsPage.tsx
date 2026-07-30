@@ -34,18 +34,8 @@ const ProjectsPage = () => {
           className="group bg-black/30 backdrop-blur-md p-8 rounded-2xl border border-white/10 hover:border-sky-400 hover:bg-black/40 transition-all duration-300 block"
         >
           <h3 className="text-2xl font-semibold mb-3 text-white group-hover:text-sky-400">Resume Tailoring Automator</h3>
-          <p className="text-white/70 mb-6">n8n-powered automation that tailors resumes to job descriptions using AI.</p>
-          <p className="text-sky-400 text-sm font-medium">n8n • AI Agents • Coming soon →</p>
-        </a>
-
-        {/* AI Resume Checker */}
-        <a 
-          href="/projects/resume-checker" 
-          className="group bg-black/30 backdrop-blur-md p-8 rounded-2xl border border-white/10 hover:border-sky-400 hover:bg-black/40 transition-all duration-300 block"
-        >
-          <h3 className="text-2xl font-semibold mb-3 text-white group-hover:text-sky-400">AI Resume Checker for Recruiters</h3>
-          <p className="text-white/70 mb-6">AI-powered tool that scans resumes for ATS compatibility and keyword strength.</p>
-          <p className="text-sky-400 text-sm font-medium">n8n • AI Agents • LLMs • Coming soon →</p>
+          <p className="text-white/70 mb-6">Live AI tool that rewrites a resume against any job description. Multi-step n8n agent workflow with an LLM doing the tailoring.</p>
+          <p className="text-sky-400 text-sm font-medium">n8n • Groq Llama 3.3 • Live demo →</p>
         </a>
       </div>
     </div>
