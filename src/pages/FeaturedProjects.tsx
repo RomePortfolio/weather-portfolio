@@ -3,9 +3,9 @@ const projects = [
     href: '/projects/resume-tailor',
     title: 'Resume Tailoring Automator',
     blurb:
-      'Live AI tool that rewrites a resume against any job description. Multi-step n8n agent workflow with an LLM doing the tailoring.',
+      'An n8n agent workflow that rewrites a resume against any job description, with an LLM doing the tailoring. Full workflow included.',
     stack: 'n8n • Groq Llama 3.3 • React',
-    tag: 'Live demo',
+    tag: 'Case study',
   },
   {
     href: '/projects/weather',
@@ -32,7 +32,7 @@ export default function FeaturedProjects() {
         Things I&rsquo;ve Built
       </h2>
       <p className="text-gray-300 text-lg mb-10 max-w-3xl">
-        I learn by building and supporting real tools. Each of these is running, not a mockup.
+        I learn by building and supporting real tools. These are things I built and ran, not mockups.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

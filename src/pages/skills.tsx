@@ -11,7 +11,7 @@ export default function Skills() {
           "IT Support & Help Desk",
           "CompTIA Security+ (DoD 8570 IAT Level II)",
           "Windows & Microsoft 365",
-          "Ticketing & ITSM (ServiceNow, Jira)",
+          "Issue Tracking & ITSM Fundamentals (Jira)",
           "Active Directory & Access Management",
           "Networking & Security Fundamentals",
           "ATD Instructional Design & Technical Training",

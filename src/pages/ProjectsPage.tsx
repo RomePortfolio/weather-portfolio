@@ -34,8 +34,8 @@ const ProjectsPage = () => {
           className="group bg-black/30 backdrop-blur-md p-8 rounded-2xl border border-white/10 hover:border-sky-400 hover:bg-black/40 transition-all duration-300 block"
         >
           <h3 className="text-2xl font-semibold mb-3 text-white group-hover:text-sky-400">Resume Tailoring Automator</h3>
-          <p className="text-white/70 mb-6">Live AI tool that rewrites a resume against any job description. Multi-step n8n agent workflow with an LLM doing the tailoring.</p>
-          <p className="text-sky-400 text-sm font-medium">n8n • Groq Llama 3.3 • Live demo →</p>
+          <p className="text-white/70 mb-6">An n8n agent workflow that rewrites a resume against any job description, with an LLM doing the tailoring. Full workflow included.</p>
+          <p className="text-sky-400 text-sm font-medium">n8n • Groq Llama 3.3 • Case study →</p>
         </a>
       </div>
     </div>
