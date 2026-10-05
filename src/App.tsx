@@ -9,6 +9,7 @@ import WeatherPage from './pages/WeatherPage';
 import MedicalPage from './pages/MedicalPage';
 import ResumeTailorPage from './pages/ResumeTailorPage';
 import DesignPage from './pages/DesignPage';
+import LectureVideoPage from './pages/LectureVideoPage';
 import BlogPage from './pages/BlogPage';
 import BlogPostPage from './pages/BlogPostPage';
 
@@ -25,6 +26,7 @@ function App() {
             <Route path="/projects/weather" element={<WeatherPage />} />
             <Route path="/projects/medical" element={<MedicalPage />} />
             <Route path="/projects/resume-tailor" element={<ResumeTailorPage />} />
+            <Route path="/projects/lecture-video" element={<LectureVideoPage />} />
             <Route path="/design" element={<DesignPage />} />
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/blog/:id" element={<BlogPostPage />} />

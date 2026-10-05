@@ -32,13 +32,13 @@ const Header = () => {
         {/* Logo / Name */}
         <NavLink 
           to="/" 
-          className="text-2xl font-bold hover:text-blue-300 transition-colors"
+          className="text-xl md:text-2xl font-bold hover:text-blue-300 transition-colors"
         >
           Rome Colmenares
         </NavLink>
 
         {/* Navigation */}
-        <nav className="flex items-center gap-6 text-sm">
+        <nav className="flex items-center gap-3 md:gap-6 text-sm">
           
           {/* About, Skills, Contact */}
           <NavLink 
@@ -74,7 +74,7 @@ const Header = () => {
           <div className="relative">
             <button 
               onClick={toggleProjects}
-              className="flex items-center gap-1 hover:text-blue-300 transition-colors focus:outline-none px-3 py-2 rounded-lg"
+              className="flex items-center gap-1 hover:text-blue-300 transition-colors focus:outline-none px-2 md:px-3 py-2 rounded-lg"
             >
               Projects 
               <span className={`text-xs transition-transform duration-200 ${isProjectsOpen ? 'rotate-180' : ''}`}>▼</span>
@@ -111,6 +111,13 @@ const Header = () => {
                 className="block px-4 py-3 hover:bg-white/10 hover:text-blue-300 transition-colors"
               >
                 Resume Tailoring Automator
+              </NavLink>
+              <NavLink 
+                to="/projects/lecture-video" 
+                onClick={() => setIsProjectsOpen(false)}
+                className="block px-4 py-3 hover:bg-white/10 hover:text-blue-300 transition-colors"
+              >
+                AI-Produced Lecture Video
               </NavLink>
             </div>
           </div>

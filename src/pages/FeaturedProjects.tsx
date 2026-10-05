@@ -1,5 +1,13 @@
 const projects = [
   {
+    href: '/projects/lecture-video',
+    title: 'AI-Produced Lecture Video',
+    blurb:
+      'A 5:42 college lecture, produced solo in 11 hours over two days, from the instructor’s script to a captioned, 508-ready master.',
+    stack: 'Kling • OpenArt • ElevenLabs • Premiere',
+    tag: 'Case study',
+  },
+  {
     href: '/projects/resume-tailor',
     title: 'Resume Tailoring Automator',
     blurb:
@@ -35,7 +43,7 @@ export default function FeaturedProjects() {
         I learn by building and supporting real tools. These are things I built and ran, not mockups.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {projects.map((p) => (
           <a
             key={p.href}

@@ -112,6 +112,12 @@ const DesignPage = () => {
             because it works with the softness of generated imagery instead of fighting it, and
             because a cold story earns a cold palette.
           </p>
+          <p className="text-white/80 leading-relaxed mb-8">
+            Want to see the same direction in motion, on a real client job?{' '}
+            <a href="/projects/lecture-video" className="text-sky-300 hover:text-sky-200 border-b border-sky-400/40">
+              The AI-produced lecture video &rarr;
+            </a>
+          </p>
           <div className="grid md:grid-cols-2 gap-8">
             {shots.map((s) => (
               <figure key={s.src} className="bg-black/40 backdrop-blur-md rounded-2xl border border-white/10 overflow-hidden">
