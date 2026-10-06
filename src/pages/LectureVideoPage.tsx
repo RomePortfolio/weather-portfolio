@@ -2,7 +2,7 @@
 import type { ReactNode } from 'react';
 import ProjectPage from './ProjectPage';
 
-// Every figure here is measured or logged. Source: the job's PROJECT_METRICS.md and PRODUCTION_LOG.md.
+// Every figure here is measured or logged. Source: the job's PROJECT_METRICS_2026-10-05.md (frozen at acceptance) and PRODUCTION_LOG.md.
 const stats = [
   { value: '11 hrs', label: 'hands-on time, start to finish' },
   { value: '2 days', label: 'from the instructor’s script to a delivered master' },
